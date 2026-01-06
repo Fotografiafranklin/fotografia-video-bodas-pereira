@@ -1518,7 +1518,158 @@ html, body{
     
   </div>
  </section>
-  
+
+  <style>
+/* ===============================
+   SECCIÓN PHOTOBOOK PREMIUM
+================================ */
+.photobook-section{
+  position:relative;
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:100px 20px;
+  color:#fff;
+
+  background:
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.85)),
+    url("https://lh3.googleusercontent.com/pw/AP1GczNxuNT9RuoRpJPl-TYJWPfldYKg5t2f3QI2pe4VJuL99FKP8zEDNjkBm16_Ftg1TE3bXtYY4fbbw0qIo5QzDnmEDOGbSjIbuCe3HdhcAd5QDaOcUVGAsfW4KRENBCpW7oSorPKZEn20Mbjjipf9ptYsLg=w619-h929-s-no-gm?authuser=0")
+    center/cover no-repeat;
+}
+
+/* CONTENEDOR */
+.photobook-box{
+  max-width:1000px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+/* TEXTO */
+.photobook-text h2{
+  font-size:2.7rem;
+  margin-bottom:20px;
+}
+
+.photobook-text p{
+  font-size:1.15rem;
+  line-height:1.8;
+  color:#eaeaea;
+  margin-bottom:18px;
+}
+
+.photobook-text strong{
+  color:#25D366;
+}
+
+/* VIDEO PREVIEW */
+.photobook-video{
+  position:relative;
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,.8);
+}
+
+.photobook-video video{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* BOTÓN CTA */
+.btn-photobook{
+  display:inline-block;
+  margin-top:30px;
+  background:#25D366;
+  color:#000;
+  padding:18px 42px;
+  border-radius:60px;
+  font-size:1.15rem;
+  font-weight:900;
+  text-decoration:none;
+  box-shadow:0 0 0 rgba(37,211,102,.6);
+  animation:pulseBook 2.4s infinite;
+  transition:transform .3s ease;
+}
+
+.btn-photobook:hover{
+  transform:scale(1.08);
+}
+
+/* ANIMACIÓN BOTÓN */
+@keyframes pulseBook{
+  0%{ box-shadow:0 0 0 0 rgba(37,211,102,.6); }
+  70%{ box-shadow:0 0 0 22px rgba(37,211,102,0); }
+  100%{ box-shadow:0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .photobook-box{
+    grid-template-columns:1fr;
+  }
+
+  .photobook-text h2{
+    font-size:2.2rem;
+  }
+}
+</style>
+
+<body>
+
+<section class="photobook-section">
+  <div class="photobook-box">
+
+    <!-- TEXTO -->
+    <div class="photobook-text">
+      <h2>Así se ve nuestro Photobook Premium</h2>
+
+      <p>
+        El photobook no es solo un álbum, es un <strong>recuerdo de lujo</strong>.
+        Diseñado para conservar tus mejores momentos con una presentación
+        elegante y profesional.
+      </p>
+
+      <p>
+        ✔ Pastadura resistente<br>
+        ✔ Hojas gruesas de alta calidad fotográfica<br>
+        ✔ Colores vivos y acabados premium<br>
+        ✔ Material duradero que se siente y se ve increíble
+      </p>
+
+      <p>
+        Antes de decidir, quiero que lo veas con tus propios ojos.
+        <strong>Mira videos reales</strong> donde se aprecia cada detalle del photobook.
+      </p>
+
+      <a href="https://photos.app.goo.gl/t8NBtMww7n6Q7aHc8"
+         target="_blank"
+         class="btn-photobook">
+        ▶ Ver videos reales del Photobook
+      </a>
+    </div>
+
+    <!-- VIDEO PREVIEW LIGERO -->
+    <div class="photobook-video">
+      <video
+        src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="https://lh3.googleusercontent.com/pw/AP1GczNxuNT9RuoRpJPl-TYJWPfldYKg5t2f3QI2pe4VJuL99FKP8zEDNjkBm16_Ftg1TE3bXtYY4fbbw0qIo5QzDnmEDOGbSjIbuCe3HdhcAd5QDaOcUVGAsfW4KRENBCpW7oSorPKZEn20Mbjjipf9ptYsLg=w619-h929-s-no-gm?authuser=0">
+      </video>
+    </div>
+
+  </div>
+</section>
+
+</body>
+
 
 <style>
 /* ===============================
