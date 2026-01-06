@@ -1517,11 +1517,161 @@ html, body{
     </a>
 
   </div>
+<style>
+/* ===============================
+   SECCIÓN SOBRE MÍ
+================================ */
+.sobre-mi{
+  padding:90px 20px;
+  background:#0b0b0b;
+  color:#fff;
+}
+
+.sobre-mi-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+/* TEXTO */
+.sobre-mi-texto{
+  background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),
+    url('https://photos.fife.usercontent.google.com/pw/AP1GczPCnZF9uXieKmUBoiqqsFU-BhD6eUWRJrAZDAvL4Z3IpVAKHWv7nt7zUA=w697-h929-s-no-gm?authuser=0')
+    center/cover no-repeat;
+  padding:60px 45px;
+  border-radius:30px;
+  box-shadow:0 30px 70px rgba(0,0,0,.8);
+}
+
+.sobre-mi-texto h2{
+  font-size:2.6rem;
+  margin-bottom:20px;
+}
+
+.sobre-mi-texto p{
+  font-size:1.05rem;
+  line-height:1.8;
+  margin-bottom:15px;
+  color:#eaeaea;
+}
+
+.sobre-mi-texto strong{
+  color:#25D366;
+}
+
+/* GALERÍA */
+.sobre-mi-galeria{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.sobre-mi-galeria img{
+  width:100%;
+  border-radius:20px;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  box-shadow:0 20px 50px rgba(0,0,0,.7);
+  transition:.4s;
+  cursor:pointer;
+}
+
+.sobre-mi-galeria img:hover{
+  transform:scale(1.05);
+}
+
+/* BOTÓN */
+.btn-ver-mas{
+  margin-top:40px;
+  display:inline-block;
+  padding:16px 36px;
+  background:#25D366;
+  color:#000;
+  border-radius:50px;
+  font-weight:800;
+  font-size:1.05rem;
+  text-decoration:none;
+  transition:.4s;
+  animation:pulse 2.5s infinite;
+}
+
+.btn-ver-mas:hover{
+  background:#1ebe5d;
+  transform:scale(1.08);
+}
+
+/* ANIMACIÓN BOTÓN */
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}
+  70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}
+  100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .sobre-mi-container{
+    grid-template-columns:1fr;
+  }
+  .sobre-mi-texto{
+    padding:45px 30px;
+  }
+  .sobre-mi-galeria{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+
+<body>
+
+<section class="sobre-mi">
+  <div class="sobre-mi-container">
+
+    <!-- TEXTO -->
+    <div class="sobre-mi-texto">
+      <h2>Sobre Mí</h2>
+
+      <p>Soy <strong>fotógrafo y videógrafo profesional</strong> con más de
+      <strong>8 años de experiencia</strong> capturando momentos únicos.</p>
+
+      <p>La fotografía y el video no son solo mi trabajo, son mi pasión.
+      Cada evento lo vivo como si fuera propio, cuidando cada detalle.</p>
+
+      <p>Realizo trabajos en <strong>Pereira y todo el Eje Cafetero</strong>,
+      ofreciendo un servicio profesional, responsable y de alta calidad.</p>
+
+      <a href="https://photos.app.goo.gl/BV2WF3TFxGWFQLmp8"
+         target="_blank"
+         class="btn-ver-mas">
+        Ver más fotos mias
+      </a>
+    </div>
+
+    <!-- GALERÍA -->
+    <div class="sobre-mi-galeria">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczNenwJu1rv5nGPnvkpDmI06wQU9XteD1UJSo4MTWhhtbhGG2w2Y-mjGXQbrVZYAro0COmiHrBTIzd03_OR_WTSnuOSM8nNWV84CtRMAHenkIkrBRDDBUDZDek1ujE9p6T_Pdi6nkC47qF4ettzLAy16yw=w697-h929-s-no-gm?authuser=0">
+
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczOWm2jJXMxDh2hT3HQd_MXkjfhA1UQn0IbdAFrqnQD5rvAZbsZ61g3glCY3eqe6qwFZB9sfiMd2LWMpcogmkYBJaiotZ0NI957mINUMhqTgTXeBDn4j3PQLkb0Ry1fH0ZDmACtarc27mqGMDpAdP1qqwg=w607-h929-s-no-gm?authuser=0">
+
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczN86alQFpdO6Xr_UJS3poCP9jEcqcHK_LMp12i9jkCzkPg3AVNZjvzdznboqCtmZZgnhyE8N4YM-hTSW0FFjjapei0gRx8OXn8aow2mHJYBFP3UtYWxzyyhB2BEj90hwte2Z_8Wxc5G90pmCtEwfJIFcA=w697-h929-s-no-gm?authuser=0">
+    </div>
+
+  </div>
+</section>
+
+</body>
+
+</body>
+    </style>
+</html>
 </section>
 
 <!-- CTA -->
 <section class="container" style="text-align:center">
-  <h2>Reserva ahora</h2>
+  <h2>Reserva tu Evento de 15 Años en Pereira</h2>
   <a class="btn" href="https://wa.me/573137900448" target="_blank">Contactar por WhatsApp</a>
 </section>
 <style>
@@ -1611,7 +1761,7 @@ html, body{
 <section class="redes-sociales">
   <h2>Sígueme en Redes Sociales</h2>
   <p>
-    Mira trabajos reales, videos completos, sesiones Boda
+    Mira trabajos reales, videos completos, sesiones de 15 años
     y contenido exclusivo detrás de cámaras.
   </p>
 
@@ -1669,11 +1819,8 @@ html, body{
 
 
 <footer>
-  <p>Fotógrafo de Bodas en Pereira © 2026</p>
+  <p>Fotógrafo de 15 Años en Pereira © 2026</p>
 </footer>
 
 </body>
 </html>
-
-
-
