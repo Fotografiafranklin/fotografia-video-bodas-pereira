@@ -1689,16 +1689,23 @@ html, body{
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Redes Sociales</title>
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redes Sociales</title>
+
 <style>
-/* ===============================
-   SECCIÓN REDES SOCIALES
-================================ */
 body{
   margin:0;
   font-family:Arial, sans-serif;
   background:#000;
 }
 
+/* ===============================
+   SECCIÓN REDES SOCIALES
+================================ */
 .redes-sociales{
   padding:90px 20px;
   background:#0f0f0f;
@@ -1737,19 +1744,25 @@ body{
   padding:40px 20px;
   box-shadow:0 20px 50px rgba(0,0,0,.7);
   transition:.4s ease;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
 }
 
 .red-card:hover{
   transform:translateY(-10px) scale(1.05);
 }
 
+/* LINK COMPLETO */
+.red-card a{
+  text-decoration:none;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
 /* LOGO */
 .red-logo{
-  width:55px;
-  height:55px;
+  width:60px;
+  height:60px;
   margin-bottom:15px;
   fill:#fff;
 }
@@ -1757,13 +1770,13 @@ body{
 /* TEXTO */
 .red-card h3{
   font-size:1.1rem;
-  margin-bottom:10px;
+  margin-bottom:8px;
 }
 
-.red-card a{
-  text-decoration:none;
+.red-card span{
   color:#25D366;
   font-weight:700;
+  font-size:.95rem;
 }
 
 /* RESPONSIVE */
@@ -1785,43 +1798,55 @@ body{
 
 <section class="redes-sociales">
   <h2>Sígueme en Redes Sociales</h2>
-
   <p>
-    Mira trabajos reales, videos completos, sesiones y contenido exclusivo.
+    Mira trabajos reales, videos completos, sesiones profesionales
+    y contenido exclusivo detrás de cámaras.
   </p>
 
   <div class="redes-contenedor">
 
+    <!-- INSTAGRAM -->
     <div class="red-card">
-      <svg class="red-logo" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10"/>
-      </svg>
-      <h3>Instagram</h3>
-      <a href="https://www.instagram.com/fotografiafranklin_col/" target="_blank">Ver sesiones</a>
+      <a href="https://www.instagram.com/fotografiafranklin_col/" target="_blank">
+        <svg class="red-logo" viewBox="0 0 24 24">
+          <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2z"/>
+        </svg>
+        <h3>Instagram</h3>
+        <span>Ver sesiones reales</span>
+      </a>
     </div>
 
+    <!-- FACEBOOK -->
     <div class="red-card">
-      <svg class="red-logo" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10"/>
-      </svg>
-      <h3>Facebook</h3>
-      <a href="https://www.facebook.com/fotografopereiraa/" target="_blank">Ver eventos</a>
+      <a href="https://www.facebook.com/fotografopereiraa/" target="_blank">
+        <svg class="red-logo" viewBox="0 0 24 24">
+          <path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2v-3h2V9.5c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.6l-.4 3h-2.2v7A10 10 0 0 0 22 12z"/>
+        </svg>
+        <h3>Facebook</h3>
+        <span>Opiniones y eventos</span>
+      </a>
     </div>
 
+    <!-- YOUTUBE -->
     <div class="red-card">
-      <svg class="red-logo" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10"/>
-      </svg>
-      <h3>YouTube</h3>
-      <a href="https://www.youtube.com/@franklinstid" target="_blank">Ver videos</a>
+      <a href="https://www.youtube.com/@franklinstid" target="_blank">
+        <svg class="red-logo" viewBox="0 0 24 24">
+          <path d="M23 7s-.2-1.6-.8-2.3c-.7-.8-1.5-.8-1.9-.9C17.7 3.5 12 3.5 12 3.5s-5.7 0-8.3.3c-.4.1-1.2.1-1.9.9C1.2 5.4 1 7 1 7S.8 8.9.8 10.8v2.4C.8 15.1 1 17 1 17s.2 1.6.8 2.3c.7.8 1.7.8 2.1.9 1.5.1 8.1.3 8.1.3s5.7 0 8.3-.3c.4-.1 1.2-.1 1.9-.9.6-.7.8-2.3.8-2.3s.2-1.9.2-3.8v-2.4C23.2 8.9 23 7 23 7zM9.8 15.1V8.9l6.2 3.1-6.2 3.1z"/>
+        </svg>
+        <h3>YouTube</h3>
+        <span>Videos completos</span>
+      </a>
     </div>
 
+    <!-- TIKTOK -->
     <div class="red-card">
-      <svg class="red-logo" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10"/>
-      </svg>
-      <h3>TikTok</h3>
-      <a href="https://www.tiktok.com/@franklinstid" target="_blank">Ver clips</a>
+      <a href="https://www.tiktok.com/@franklinstid" target="_blank">
+        <svg class="red-logo" viewBox="0 0 24 24">
+          <path d="M17 1h-2v14.2a3.8 3.8 0 1 1-3-3.7V9a6 6 0 1 0 5 5.9V7.3A6.5 6.5 0 0 0 21 8V5.7A4.8 4.8 0 0 1 17 1z"/>
+        </svg>
+        <h3>TikTok</h3>
+        <span>Clips y tendencias</span>
+      </a>
     </div>
 
   </div>
@@ -1829,3 +1854,4 @@ body{
 
 </body>
 </html>
+
