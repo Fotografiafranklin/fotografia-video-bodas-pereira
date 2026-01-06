@@ -1294,6 +1294,180 @@ h2{
 
 <body>
 
+  /* =====================================
+   SECCIÓN VIDEO PAQUETE PREMIUM
+===================================== */
+
+.seccion-video-premium{
+  position:relative;
+  width:100%;
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:90px 20px;
+  color:#fff;
+
+  background-image:url("https://lh3.googleusercontent.com/pw/AP1GczMo2LO9wnVGIcrHUYIhd2DoZ19teZVOjIzbWm3OWh1XBIM9vlt_2Qd7wteVECbXHM-5nD2YTIL6rNe6mEg2nBkDuS0bVKnSqXyqk336wU6wKcubVujbCbsg0LTCscTE5znuEtNTKTuj8OXpD8GrioASiw=w619-h929-s-no-gm?authuser=0") !important;
+  background-size:cover !important;
+  background-position:center !important;
+  background-repeat:no-repeat !important;
+}
+
+/* OVERLAY */
+.seccion-video-premium::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.85)
+  );
+  z-index:1;
+}
+
+.video-premium-content{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+}
+
+.video-premium-content h2{
+  font-size:2.7rem;
+  margin-bottom:22px;
+}
+
+.video-premium-content p{
+  font-size:1.15rem;
+  line-height:1.7;
+  margin-bottom:35px;
+}
+
+.video-highlight{
+  font-size:1.3rem;
+  font-weight:800;
+  color:#25D366;
+  margin-bottom:45px;
+}
+
+/* =====================================
+   BOTÓN ANIMADO PREMIUM
+===================================== */
+
+.btn-video{
+  position:relative;
+  display:inline-block;
+  background:#ff0000;
+  color:#fff;
+  padding:20px 44px;
+  border-radius:60px;
+  font-size:1.2rem;
+  font-weight:900;
+  text-decoration:none;
+  overflow:hidden;
+  box-shadow:0 0 45px rgba(255,0,0,.6);
+  animation:pulseVideo 2.8s infinite;
+  transition:transform .3s ease;
+}
+
+/* Brillo animado */
+.btn-video::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-75%;
+  width:50%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.6),
+    transparent
+  );
+  animation:shine 3.5s infinite;
+}
+
+/* Hover */
+.btn-video:hover{
+  transform:scale(1.1);
+  background:#e60000;
+}
+
+/* =====================================
+   ANIMACIONES
+===================================== */
+
+@keyframes pulseVideo{
+  0%{
+    box-shadow:0 0 0 0 rgba(255,0,0,.7);
+  }
+  70%{
+    box-shadow:0 0 0 25px rgba(255,0,0,0);
+  }
+  100%{
+    box-shadow:0 0 0 0 rgba(255,0,0,0);
+  }
+}
+
+@keyframes shine{
+  0%{
+    left:-75%;
+  }
+  60%{
+    left:125%;
+  }
+  100%{
+    left:125%;
+  }
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .seccion-video-premium{
+    padding:100px 20px;
+  }
+
+  .video-premium-content h2{
+    font-size:2.1rem;
+  }
+
+  .video-premium-content p{
+    font-size:1.05rem;
+  }
+
+  .btn-video{
+    width:100%;
+    padding:18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="seccion-video-premium">
+  <div class="video-premium-content">
+
+    <h2>¿Quieres ver cómo queda el video del Paquete Premium?</h2>
+
+    <p>
+      Las fotos cuentan una historia, pero el <strong>video revive cada emoción</strong>.
+      Mira resultados reales de eventos de 15 años realizados durante más de
+      <strong>8 años de experiencia profesional</strong>.
+    </p>
+
+    <div class="video-highlight">
+      🎬 Videos reales · Emociones auténticas · Calidad Premium
+    </div>
+
+    <a href="https://www.youtube.com/@franklinstid/videos"
+       class="btn-video"
+       target="_blank">
+       ▶ Ver videos reales del Paquete Premium
+    </a>
+
+  </div>
 
 </section>
 
