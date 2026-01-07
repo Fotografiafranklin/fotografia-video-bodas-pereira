@@ -1549,8 +1549,7 @@ h2{
   animation:pulse 2.5s infinite;
 }
 
-@keyframes pulse
-
+@keyframes pulse{
   0%{box-shadow:0 0 0 0 rgba(255,0,0,.6);}
   70%{box-shadow:0 0 0 20px rgba(255,0,0,0);}
   100%{box-shadow:0 0 0 0 rgba(255,0,0,0);}
@@ -1600,11 +1599,13 @@ h2{
       🎬 Videos reales · Emociones auténticas · Calidad Premium
     </div>
 
+    <!-- VIDEO VIMEO -->
     <div class="video-wrapper">
       <iframe
-        src="https://www.youtube.com/embed/QXWDIaaDNTQ?autoplay=1&mute=1&loop=1&playlist=QXWDIaaDNTQ&playsinline=1&rel=0&modestbranding=1"
-        allow="autoplay; encrypted-media; picture-in-picture"
-        allowfullscreen>
+        src="https://player.vimeo.com/video/1152077627?autoplay=1&muted=1&loop=1&autopause=0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+        allowfullscreen
+        title="BODA ALEXANDER">
       </iframe>
     </div>
 
@@ -1613,6 +1614,14 @@ h2{
        target="_blank">
        ▶ Ver más videos reales
     </a>
+
+  </div>
+</section>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+</body>
+
 
   </div>
 </section>
