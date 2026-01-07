@@ -595,22 +595,19 @@ ul li{
 </html>
 
 <style>
-<style>
 /* =========================
    URGENCIA & ESCASEZ
 ========================= */
-
 .urgencia-section{
   padding:90px 20px;
   color:#fff;
   text-align:center;
   background:
     linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
-    url("https://lh3.googleusercontent.com/pw/AP1GczOEGptaVNxhLCxW83S0KV1KwuHmKjZQHtUUvdVXSJwbZgZ_vkyJuT72DVz_JPSQWySzP2gKaBXqetoW8B3iOFBUOXI9xiJWyhvevum0cRDhwjmwWN89uCXE8U72ecenCVUYur9k3rNKnYdZVXfT9S9GxQ=w1394-h929-s-no-gm?authuser=0")
+    url("https://lh3.googleusercontent.com/pw/AP1GczOEGptaVNxhLCxW83S0KV1KwuHmKjZQHtUUvdVXSJwbZgZ_vkyJuT72DVz_JPSQWySzP2gKaBXqetoW8B3iOFBUOXI9xiJWyhvevum0cRDhwjmwWN89uCXE8U72ecenCVUYur9k3rNKnYdZVXfT9S9GxQ=w1394-h929-s-no-gm")
     center/cover no-repeat;
 }
 
-/* CAJA */
 .urgencia-box{
   max-width:900px;
   margin:auto;
@@ -648,7 +645,7 @@ ul li{
   backdrop-filter:blur(6px);
 }
 
-/* CONTADOR DESKTOP */
+/* CONTADOR */
 .contador{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -661,6 +658,7 @@ ul li{
   background:#111;
   padding:20px 10px;
   border-radius:18px;
+  border:1px solid rgba(37,211,102,.25);
 }
 
 .tiempo span{
@@ -694,44 +692,13 @@ ul li{
   100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
 }
 
-/* =========================
-   VERSIÓN MÓVIL
-========================= */
+/* MOBILE */
 @media(max-width:768px){
-
-  .urgencia-section{
-    background:
-      linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.95)),
-      url("https://lh3.googleusercontent.com/pw/AP1GczOEGptaVNxhLCxW83S0KV1KwuHmKjZQHtUUvdVXSJwbZgZ_vkyJuT72DVz_JPSQWySzP2gKaBXqetoW8B3iOFBUOXI9xiJWyhvevum0cRDhwjmwWN89uCXE8U72ecenCVUYur9k3rNKnYdZVXfT9S9GxQ=w619-h929-s-no-gm?authuser=0")
-      center/cover no-repeat;
-  }
-
-  .urgencia-box{
-    padding:45px 22px;
-  }
-
-  .urgencia-box h2{
-    font-size:2.1rem;
-  }
-
-  .contador{
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
-  }
-
-  .tiempo span{
-    font-size:2.6rem;
-  }
-
-  .btn-urgencia{
-    width:100%;
-    padding:18px 20px;
-    font-size:1.1rem;
-  }
+  .urgencia-box h2{font-size:2.1rem;}
+  .contador{grid-template-columns:repeat(2,1fr);}
+  .btn-urgencia{width:100%;}
 }
 </style>
-
-<body>
 
 <section class="urgencia-section">
   <div class="urgencia-box">
@@ -746,149 +713,73 @@ ul li{
     <div class="gatillos">
       <div class="gatillo">✔ Cupos mensuales limitados</div>
       <div class="gatillo">✔ Alta demanda 2026</div>
-      <div class="gatillo">✔ Precio especial por tiempo limitado</div>
+      <div class="gatillo">✔ Precio especial vigente</div>
     </div>
 
     <p style="font-weight:700;margin-bottom:20px;">
-      ⏳ Esta oferta termina en:
+      ⏳ Tiempo disponible para reservar:
     </p>
 
     <div class="contador">
-      <div class="tiempo"><span id="dias">00</span><small>Días</small></div>
-      <div class="tiempo"><span id="horas">00</span><small>Horas</small></div>
-      <div class="tiempo"><span id="minutos">00</span><small>Minutos</small></div>
-      <div class="tiempo"><span id="segundos">00</span><small>Segundos</small></div>
+      <div class="tiempo"><span id="urg-dias">07</span><small>Días</small></div>
+      <div class="tiempo"><span id="urg-horas">00</span><small>Horas</small></div>
+      <div class="tiempo"><span id="urg-minutos">00</span><small>Min</small></div>
+      <div class="tiempo"><span id="urg-segundos">00</span><small>Seg</small></div>
     </div>
 
     <a href="https://wa.me/573137900448" class="btn-urgencia">
-      👉 Reservar fecha por WhatsApp
+      👉 Consultar disponibilidad por WhatsApp
     </a>
+
+    <div style="margin-top:18px;font-size:.9rem;color:#bbb;">
+      *Los cupos se asignan por orden de contacto.
+    </div>
 
   </div>
 </section>
 
 <script>
-const fechaLimite = new Date();
-fechaLimite.setDate(fechaLimite.getDate() + 5);
+(function(){
 
-function actualizarContador(){
-  const ahora = new Date().getTime();
-  const distancia = fechaLimite - ahora;
-  if(distancia < 0) return;
+  const DURACION = 7 * 24 * 60 * 60 * 1000;
+  const STORAGE_KEY = "urgencia_evergreen_7dias";
 
-  dias.innerText = Math.floor(distancia / (1000*60*60*24));
-  horas.innerText = Math.floor((distancia % (1000*60*60*24))/(1000*60*60));
-  minutos.innerText = Math.floor((distancia % (1000*60*60))/(1000*60));
-  segundos.innerText = Math.floor((distancia % (1000*60))/1000);
-}
-setInterval(actualizarContador,1000);
+  let fechaFin = localStorage.getItem(STORAGE_KEY);
+  const ahora = Date.now();
+
+  if (!fechaFin || isNaN(fechaFin) || fechaFin - ahora > DURACION) {
+    fechaFin = ahora + DURACION;
+    localStorage.setItem(STORAGE_KEY, fechaFin);
+  }
+
+  fechaFin = Number(fechaFin);
+
+  const d = document.getElementById("urg-dias");
+  const h = document.getElementById("urg-horas");
+  const m = document.getElementById("urg-minutos");
+  const s = document.getElementById("urg-segundos");
+
+  function actualizar(){
+    const ahora = Date.now();
+    let diff = fechaFin - ahora;
+
+    if (diff <= 0) {
+      fechaFin = ahora + DURACION;
+      localStorage.setItem(STORAGE_KEY, fechaFin);
+      diff = DURACION;
+    }
+
+    d.textContent = Math.floor(diff / 86400000);
+    h.textContent = Math.floor((diff % 86400000)/3600000).toString().padStart(2,"0");
+    m.textContent = Math.floor((diff % 3600000)/60000).toString().padStart(2,"0");
+    s.textContent = Math.floor((diff % 60000)/1000).toString().padStart(2,"0");
+  }
+
+  setInterval(actualizar,1000);
+  actualizar();
+
+})();
 </script>
-<style>
-
-.urgencia-avanzada{
-  padding:100px 20px;
-  background:
-    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
-    url("https://lh3.googleusercontent.com/pw/AP1GczOEGptaVNxhLCxW83S0KV1KwuHmKjZQHtUUvdVXSJwbZgZ_vkyJuT72DVz_JPSQWySzP2gKaBXqetoW8B3iOFBUOXI9xiJWyhvevum0cRDhwjmwWN89uCXE8U72ecenCVUYur9k3rNKnYdZVXfT9S9GxQ=w1394-h929-s-no-gm")
-    center/cover no-repeat;
-  text-align:center;
-  color:#fff;
-}
-
-.urgencia-box{
-  max-width:900px;
-  margin:auto;
-  background:rgba(0,0,0,.55);
-  padding:60px 40px;
-  border-radius:30px;
-  box-shadow:0 30px 80px rgba(0,0,0,.8);
-}
-
-.urgencia-box h2{
-  font-size:2.6rem;
-  margin-bottom:20px;
-}
-
-.mensaje-dinamico{
-  font-size:1.4rem;
-  font-weight:700;
-  color:#ffcc00;
-  margin-bottom:35px;
-}
-
-.contador{
-  display:flex;
-  justify-content:center;
-  gap:25px;
-  margin-bottom:35px;
-  flex-wrap:wrap;
-}
-
-.contador div{
-  background:#111;
-  padding:18px 22px;
-  border-radius:18px;
-  min-width:90px;
-}
-
-.contador span{
-  font-size:2.2rem;
-  font-weight:900;
-  color:#25D366;
-}
-
-.contador small{
-  display:block;
-  font-size:.8rem;
-  color:#bbb;
-}
-
-.anti-objecion{
-  font-size:1.1rem;
-  margin-bottom:40px;
-  color:#ff9c9c;
-  font-weight:600;
-}
-
-.cta-multiple{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
-}
-
-.cta-multiple a{
-  padding:16px 32px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:800;
-  background:#222;
-  color:#25D366;
-  border:2px solid #25D366;
-}
-
-.cta-multiple a.destacado{
-  background:#25D366;
-  color:#000;
-  box-shadow:0 0 30px rgba(37,211,102,.6);
-}
-
-/* 📱 MOBILE */
-@media(max-width:768px){
-  .urgencia-box h2{
-    font-size:2rem;
-  }
-  .contador{
-    gap:15px;
-  }
-  .contador div{
-    min-width:70px;
-    padding:14px;
-  }
-}
-
-</style>
-
 </body>
 
    <!-- ================= TESTIMONIOS ================= -->
