@@ -373,38 +373,227 @@ document.querySelectorAll(".animate").forEach(el=>{
       </a>
     </div>
 
-    <!-- ===== PAQUETE PREMIUM ===== -->
-   <div class="paquete premium">
+   <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Paquete Premium – Fotografía 15 Años</title>
 
-      <div class="badge-top">TOP QUALITY</div>
-      <div class="badge-elegido">⭐ El más elegido</div>
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:#0e0e0e;
+  color:#fff;
+}
 
-      <h3>Paquete Premium</h3>
+/* CONTENEDOR */
+.seccion-paquetes{
+  padding:80px 20px;
+  display:flex;
+  justify-content:center;
+}
 
-      <div class="estrellas">⭐⭐⭐⭐⭐</div>
+/* TARJETA PREMIUM */
+.paquete.premium{
+  position:relative;
+  max-width:420px;
+  width:100%;
+  background:linear-gradient(180deg,#1a1a1a,#111);
+  border-radius:25px;
+  padding:45px 35px;
+  text-align:center;
+  box-shadow:0 40px 90px rgba(0,0,0,.8);
+  animation:premiumFloat 4s ease-in-out infinite;
+  border:2px solid rgba(37,211,102,.5);
+}
 
-      <p class="precio-premium">$1.600.000</p>
-      <p class="precio-antes">$2.500.000</p>
-      <span class="ahorro">Ahorra $900.000</span>
+/* ANIMACIÓN TARJETA */
+@keyframes premiumFloat{
+  0%{transform:translateY(0) scale(1);}
+  50%{transform:translateY(-10px) scale(1.02);}
+  100%{transform:translateY(0) scale(1);}
+}
 
-      <ul>
-        <li>✔ Sesión de pre-boda incluida</li>
-    <li>✔ Preparación de los novios</li>
-    <li>✔ Ceremonia o misa completa</li>
-    <li>✔ Recepción / Fiesta</li>
-    <li>✔ Photobook mas grande premium tamaño 20×30  ( 70–80 fotos)</li>
-    <li>✔ +100 fotos digitales en full calidad</li>
-    <li>✔ Video tipo tráiler </li>
-    <li>✔ Entrega en USB + copia digital</li>
-    <li>✔ Bonos GRATIS incluidos</li>
-  </ul>
+/* BADGES */
+.badge-top{
+  position:absolute;
+  top:-18px;
+  left:50%;
+  transform:translateX(-50%);
+  background:gold;
+  color:#000;
+  padding:8px 22px;
+  border-radius:20px;
+  font-weight:900;
+  font-size:.9rem;
+}
 
-      <a href="https://wa.me/573137900448" class="btn-whatsapp">
-        📲 Reservar por WhatsApp
-      </a>
+/* ===== BADGE EL MÁS ELEGIDO ===== */
+.badge-elegido{
+  position:absolute;
+  top:15px;
+  right:15px;
+  background:linear-gradient(135deg,#25D366,#9effc8);
+  color:#000;
+  padding:8px 16px;
+  border-radius:20px;
+  font-size:.85rem;
+  font-weight:900;
+  box-shadow:0 8px 25px rgba(37,211,102,.55);
+  animation:elegidoPulse 2.8s infinite ease-in-out;
+  z-index:5;
+}
 
-      <p class="nota">Cupos limitados · Reserva anticipada</p>
-    </div>
+@keyframes elegidoPulse{
+  0%{
+    transform:scale(1) rotate(0deg);
+    box-shadow:0 0 0 0 rgba(37,211,102,.6);
+  }
+  40%{
+    transform:scale(1.12) rotate(-2deg);
+    box-shadow:0 0 0 14px rgba(37,211,102,0);
+  }
+  70%{
+    transform:scale(1.05) rotate(2deg);
+  }
+  100%{
+    transform:scale(1) rotate(0deg);
+    box-shadow:0 0 0 0 rgba(37,211,102,0);
+  }
+}
+
+.paquete.premium:hover .badge-elegido{
+  animation:elegidoHover 1.2s infinite alternate;
+}
+
+@keyframes elegidoHover{
+  from{transform:scale(1.15);}
+  to{transform:scale(1.28);}
+}
+
+/* TEXTO */
+h3{
+  margin-top:35px;
+  font-size:2rem;
+}
+
+.estrellas{
+  font-size:1.4rem;
+  margin:10px 0;
+}
+
+.precio-premium{
+  font-size:2.8rem;
+  color:#25D366;
+  font-weight:900;
+}
+
+.precio-antes{
+  text-decoration:line-through;
+  color:#ff7b7b;
+  font-size:1rem;
+}
+
+.ahorro{
+  display:inline-block;
+  margin-top:10px;
+  background:gold;
+  color:#000;
+  padding:7px 18px;
+  border-radius:20px;
+  font-weight:800;
+}
+
+/* LISTA */
+ul{
+  list-style:none;
+  padding:0;
+  margin:35px 0;
+  text-align:left;
+}
+
+ul li{
+  margin-bottom:12px;
+  font-size:.95rem;
+}
+
+/* BOTÓN WHATSAPP */
+.btn-whatsapp{
+  display:inline-block;
+  margin-top:20px;
+  background:#25D366;
+  color:#000;
+  padding:18px 36px;
+  border-radius:50px;
+  font-size:1.1rem;
+  font-weight:900;
+  text-decoration:none;
+  animation:pulse 2.5s infinite;
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(37,211,102,.6);}
+  70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}
+  100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+}
+
+.btn-whatsapp:hover{
+  transform:scale(1.08);
+}
+
+/* NOTA */
+.nota{
+  margin-top:20px;
+  font-size:.85rem;
+  color:#ccc;
+}
+</style>
+</head>
+
+<body>
+
+<section class="seccion-paquetes">
+
+  <!-- ===== PAQUETE PREMIUM ===== -->
+  <div class="paquete premium">
+
+    <div class="badge-top">TOP QUALITY</div>
+    <div class="badge-elegido">⭐ El más elegido</div>
+
+    <h3>Paquete Premium</h3>
+
+    <div class="estrellas">⭐⭐⭐⭐⭐</div>
+
+    <p class="precio-premium">$1.600.000</p>
+    <p class="precio-antes">$2.500.000</p>
+    <span class="ahorro">Ahorra $900.000</span>
+
+    <ul>
+      <li>✔ Sesión de pre-15 incluida</li>
+      <li>✔ Preparación de la quinceañera</li>
+      <li>✔ Ceremonia o misa completa</li>
+      <li>✔ Recepción / Fiesta</li>
+      <li>✔ Photobook premium 20×30 (70–80 fotos)</li>
+      <li>✔ +100 fotos digitales alta calidad</li>
+      <li>✔ Video tipo tráiler</li>
+      <li>✔ Entrega en USB + copia digital</li>
+      <li>✔ Bonos GRATIS incluidos</li>
+    </ul>
+
+    <a href="https://wa.me/573137900448" class="btn-whatsapp">
+      📲 Reservar por WhatsApp
+    </a>
+
+    <p class="nota">Cupos limitados · Reserva anticipada</p>
+
+  </div>
+
+</section>
+
+</body>
+</html>
+
 <style>
 <style>
 /* =========================
