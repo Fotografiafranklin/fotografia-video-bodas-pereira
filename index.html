@@ -165,34 +165,28 @@ src="https://www.facebook.com/tr?id=1412023483658157&ev=PageView&noscript=1"/>
 </noscript>
 <!-- End Meta Pixel Code -->
 
-  <script>
+ <script>
 let leadSent = false;
 
 document.addEventListener("click", function(e) {
-
   if (leadSent) return;
 
-  let el = e.target.closest("a");
-
+  let el = e.target.closest("a, button");
   if (!el) return;
 
-  let link = el.href || "";
+  let link = el.getAttribute("href") || "";
 
   if (
     link.includes("wa.me") ||
-    link.includes("api.whatsapp.com") ||
-    link.includes("whatsapp")
+    link.includes("api.whatsapp.com")
   ) {
-
-    fbq('trackCustom', 'LeadWhatsApp');
-
+    fbq('track', 'Lead');
     leadSent = true;
-
-    console.log("Lead WhatsApp enviado");
+    console.log("Lead enviado una sola vez");
   }
-
 });
 </script>
+
 
 
 
