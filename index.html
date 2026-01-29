@@ -181,7 +181,8 @@ document.addEventListener("click", function(e) {
     link.includes("api.whatsapp.com") ||
     link.includes("whatsapp")
   ) {
-    fbq('track', 'Lead');
+   fbq('track', 'Contact');
+
     leadSent = true;
     console.log("Lead enviado una sola vez");
   }
