@@ -171,12 +171,18 @@ document.addEventListener("click", function(e) {
   if (!el) return;
 
   let link = el.getAttribute("href") || "";
-  if (link.includes("wa.me") || link.includes("whatsapp")) {
+
+  if (
+    link.includes("wa.me") ||
+    link.includes("api.whatsapp.com") ||
+    link.includes("whatsapp")
+  ) {
     fbq('track', 'Lead');
-    console.log("Lead enviado");
+    console.log("Lead enviado a Meta");
   }
 });
 </script>
+
 
   
 </head>
