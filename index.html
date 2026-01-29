@@ -166,7 +166,11 @@ src="https://www.facebook.com/tr?id=1412023483658157&ev=PageView&noscript=1"/>
 <!-- End Meta Pixel Code -->
 
   <script>
+let leadSent = false;
+
 document.addEventListener("click", function(e) {
+  if (leadSent) return;
+
   let el = e.target.closest("a, button, div");
   if (!el) return;
 
@@ -178,10 +182,12 @@ document.addEventListener("click", function(e) {
     link.includes("whatsapp")
   ) {
     fbq('track', 'Lead');
-    console.log("Lead enviado a Meta");
+    leadSent = true;
+    console.log("Lead enviado una sola vez");
   }
 });
 </script>
+
 
 
   
