@@ -38,6 +38,16 @@ src="https://www.facebook.com/tr?id=1412023483658157&ev=PageView&noscript=1"/>
 </noscript>
 <!-- End Meta Pixel Code -->
 
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      fbq('track', 'Lead');
+    });
+  });
+});
+</script>
+
   
 <meta name="description" content="Fotógrafo profesional de bodas en Pereira y eje cafetero. Fotografía y video Premium para matrimonios. Capturamos historias reales.">
 
