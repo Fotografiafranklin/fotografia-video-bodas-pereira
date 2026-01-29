@@ -166,14 +166,18 @@ src="https://www.facebook.com/tr?id=1412023483658157&ev=PageView&noscript=1"/>
 <!-- End Meta Pixel Code -->
 
   <script>
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function(btn) {
-    btn.addEventListener("click", function() {
-      fbq('track', 'Lead');
-    });
-  });
+document.addEventListener("click", function(e) {
+  let el = e.target.closest("a, button, div");
+  if (!el) return;
+
+  let link = el.getAttribute("href") || "";
+  if (link.includes("wa.me") || link.includes("whatsapp")) {
+    fbq('track', 'Lead');
+    console.log("Lead enviado");
+  }
 });
 </script>
+
   
 </head>
 
